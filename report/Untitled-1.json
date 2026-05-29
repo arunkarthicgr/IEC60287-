@@ -1,0 +1,200 @@
+{
+  "cases": {
+    
+    "CASE_1_standard_185mm2_Al_33kV": {
+      "description": "Standard cable — Cu tape screen, no foil, no armour (matches your Project GUNNERZ sheet)",
+      "request": {
+        "project": "PROJECT GUNNERZ",
+        "doc_no": "PCM-CR-2024/10672-1",
+        "engineer": "Ir. Ts. Mohammad Shahril",
+        "conductor": {
+          "mat": "Al", "size_mm2": 185, "type": "stranded_compact",
+          "Dc_mm": 15.9, "Dc_sc_mm": 17.6, "theta_max": 90
+        },
+        "insulation": {
+          "material": "XLPE", "Di_mm": 35.9, "Di_sc_mm": 37.6,
+          "t_ins_mm": 9.19, "eps_r": 2.5, "tan_d": 0.004
+        },
+        "screen": {
+          "type": "Cu_tape", "ds_mm": 38.0, "ts_mm": 0.10,
+          "As_mm2": 50.0, "rho_s_user": 0.0,
+          "rho_sc": 2.5, "rho_tape": 6.0, "D_tuws_mm": 38.6,
+          "ns": 0, "ds_wire_mm": 0.0, "Ls_mm": 0.0
+        },
+        "oversheath": {
+          "material": "PVC", "t_osh_mm": 3.2, "De_mm": 44.0,
+          "has_outer_sc": false, "De_1_mm": 0.0, "rho_osh_sc": 2.5
+        },
+        "system": {
+          "U_rated_kV": 33.0, "U0_kV": 19.053, "freq_Hz": 50,
+          "bonding": "solid", "formation": "trefoil"
+        },
+        "buried": {
+          "depth_mm": 1200, "spacing_mm": 44.0,
+          "theta_amb": 30.0, "rho_soil": 1.2
+        },
+        "duct": {
+          "material": "PE", "Do_mm": 160.0, "t_duct_mm": 5.0,
+          "touching": true, "duct_spacing_mm": 0.0
+        },
+        "air": {
+          "theta_amb_air": 40.0, "mounting": "free",
+          "solar": false, "solar_H": 1000.0, "solar_sigma": 0.4,
+          "wind": false, "wind_speed_ms": 0.0
+        },
+        "tb880": {
+          "gp2_round_down": true, "gp6_eddy": true,
+          "gp7_wd": true, "gp8_exact_t4": true, "t3_touching": true
+        }
+      }
+    },
+
+    "CASE_2_with_Al_foil_HV": {
+      "description": "HV cable with Al laminated foil — add the 'al_foil' block",
+      "extra_fields": "al_foil block is REQUIRED for this case",
+      "request": {
+        "project": "HV PROJECT",
+        "doc_no": "DOC-002",
+        "engineer": "Engineer",
+        "conductor": {
+          "mat": "Cu", "size_mm2": 630, "type": "milliken",
+          "Dc_mm": 30.0, "Dc_sc_mm": 32.0, "theta_max": 90
+        },
+        "insulation": {
+          "material": "XLPE", "Di_mm": 67.0, "Di_sc_mm": 68.8,
+          "t_ins_mm": 17.5, "eps_r": 2.5, "tan_d": 0.001
+        },
+        "screen": {
+          "type": "Cu_wire", "ds_mm": 69.5, "ts_mm": 0.0,
+          "As_mm2": 0.0, "rho_s_user": 0.0,
+          "rho_sc": 2.5, "rho_tape": 6.0, "D_tuws_mm": 70.5,
+          "ns": 56, "ds_wire_mm": 0.9, "Ls_mm": 240.0
+        },
+        "al_foil": {
+          "t_fl_mm": 0.2,
+          "D_fl_mm": 72.5,
+          "D_owt_mm": 71.1,
+          "rho_wb": 12.0
+        },
+        "oversheath": {
+          "material": "PE", "t_osh_mm": 5.5, "De_mm": 83.5,
+          "has_outer_sc": false, "De_1_mm": 0.0, "rho_osh_sc": 2.5
+        },
+        "system": {
+          "U_rated_kV": 132.0, "U0_kV": 76.21, "freq_Hz": 50,
+          "bonding": "solid", "formation": "trefoil"
+        },
+        "buried": {
+          "depth_mm": 1000, "spacing_mm": 83.5,
+          "theta_amb": 20.0, "rho_soil": 1.0
+        },
+        "duct": {
+          "material": "HDPE", "Do_mm": 140.0, "t_duct_mm": 7.0,
+          "touching": true, "duct_spacing_mm": 0.0
+        },
+        "air": {
+          "theta_amb_air": 25.0, "mounting": "free",
+          "solar": true, "solar_H": 1000.0, "solar_sigma": 0.4,
+          "wind": false, "wind_speed_ms": 0.0
+        },
+        "tb880": {
+          "gp2_round_down": true, "gp6_eddy": true,
+          "gp7_wd": true, "gp8_exact_t4": true, "t3_touching": true
+        }
+      }
+    },
+
+    "CASE_3_armoured_cable": {
+      "description": "Armoured cable (SWA) — add the 'armour' block",
+      "extra_fields": "armour block is REQUIRED for this case",
+      "request": {
+        "project": "ARMOURED PROJECT",
+        "doc_no": "DOC-003",
+        "engineer": "Engineer",
+        "conductor": {
+          "mat": "Cu", "size_mm2": 300, "type": "stranded",
+          "Dc_mm": 20.0, "Dc_sc_mm": 21.7, "theta_max": 90
+        },
+        "insulation": {
+          "material": "XLPE", "Di_mm": 42.0, "Di_sc_mm": 43.7,
+          "t_ins_mm": 10.15, "eps_r": 2.5, "tan_d": 0.004
+        },
+        "screen": {
+          "type": "Cu_tape", "ds_mm": 44.5, "ts_mm": 0.10,
+          "As_mm2": 50.0, "rho_s_user": 0.0,
+          "rho_sc": 2.5, "rho_tape": 6.0, "D_tuws_mm": 44.5,
+          "ns": 0, "ds_wire_mm": 0.0, "Ls_mm": 0.0
+        },
+        "armour": {
+          "type": "SWA",
+          "da_mm": 3.15,
+          "na": 48,
+          "Da_mm": 55.0
+        },
+        "oversheath": {
+          "material": "PVC", "t_osh_mm": 3.5, "De_mm": 63.0,
+          "has_outer_sc": false, "De_1_mm": 0.0, "rho_osh_sc": 2.5
+        },
+        "system": {
+          "U_rated_kV": 33.0, "U0_kV": 19.053, "freq_Hz": 50,
+          "bonding": "solid", "formation": "trefoil"
+        },
+        "buried": {
+          "depth_mm": 1000, "spacing_mm": 63.0,
+          "theta_amb": 30.0, "rho_soil": 1.2
+        },
+        "duct": {
+          "material": "HDPE", "Do_mm": 125.0, "t_duct_mm": 6.0,
+          "touching": true, "duct_spacing_mm": 0.0
+        },
+        "air": {
+          "theta_amb_air": 40.0, "mounting": "free",
+          "solar": false, "solar_H": 0.0, "solar_sigma": 0.4,
+          "wind": false, "wind_speed_ms": 0.0
+        },
+        "tb880": {
+          "gp2_round_down": true, "gp6_eddy": true,
+          "gp7_wd": true, "gp8_exact_t4": true, "t3_touching": true
+        }
+      }
+    },
+
+    "CASE_4_HV_foil_and_armour": {
+      "description": "HV cable with BOTH Al foil AND armour — include both blocks",
+      "note": "Just include both 'al_foil' and 'armour' blocks together"
+    }
+  },
+
+  "expected_response_shape": {
+    "project": "PROJECT GUNNERZ",
+    "doc_no": "PCM-CR-2024/10672-1",
+    "cable_desc": "185mm² Al XLPE 33kV",
+    "buried": {
+      "ampacity_A": 307.4,
+      "ampacity_rounded": 307,
+      "MVA": 18.6,
+      "lam1": 0.0193,
+      "lam1_circ": 0.0193,
+      "lam1_eddy": 0.0,
+      "lam2": 0.0,
+      "Wc_W_per_m": 19.4,
+      "Ws_W_per_m": 0.37,
+      "Wa_W_per_m": 0.0,
+      "theta_conductor": 90.0,
+      "theta_sheath": 74.2,
+      "theta_surface": 62.1,
+      "T1": 0.479,
+      "T2": 0.0,
+      "T3": 0.163,
+      "T4": 1.45,
+      "converged": true,
+      "iterations": 12
+    },
+    "duct": { "...": "same shape" },
+    "air":  { "...": "same shape" },
+    "R0_20": 1.64e-4,
+    "R_ac":  2.108e-4,
+    "Wd":    0.0,
+    "C_nF_per_m": 0.194
+  }
+}
